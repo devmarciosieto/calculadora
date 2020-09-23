@@ -1,5 +1,27 @@
+<div class="container">
+
 <p-sidebar [(visible)]="visibleSidebar1" [baseZIndex]="10000">
+
   <h1 style="font-weight:normal">Left Sidebar</h1>
+
+
+  <h5 [ngStyle]="{ fontSize: selectedTamanho.name, color: selectedCor.cor}">
+    Seleciona o tamanho da Fonte {{selectedTamanho.name}}</h5>
+
+  <div *ngFor="let tamanho of tamanhos" class="p-field-checkbox">
+    <p-radioButton inpudIt="category.key" name="category"
+                   [value]="tamanho" [(ngModel)]="selectedTamanho"></p-radioButton>
+    <label [for]="tamanho.key">{{tamanho.name}}</label>
+  </div>
+
+
+  <h5>Cor de Fundo {{ selectedCor.cor }}</h5>
+  <p-dropdown [options]="cores"
+              [(ngModel)]="selectedCor"
+              placeholder="Select a Cor"
+              optionLabel="name" [showClear]="true"></p-dropdown>
+  <hr>
+
   <p-button type="button" (click)="visibleSidebar1 = false" label="Save" styleClass="p-button-success"></p-button>
   <p-button type="button" (click)="visibleSidebar1 = false" label="Cancel" styleClass="p-button-secondary"></p-button>
 </p-sidebar>
@@ -33,4 +55,10 @@
 <p-button class="botao" type="button" (click)="visibleSidebar3 = true" icon="pi pi-arrow-down"></p-button>
 <p-button class="botao" type="button" (click)="visibleSidebar4 = true" icon="pi pi-arrow-up"></p-button>
 <p-button class="botao" type="button" (click)="visibleSidebar5 = true" icon="pi pi-th-large"></p-button>
+
+
+
+
+</div>
+
 
