@@ -28,6 +28,18 @@
 
 <p-sidebar [(visible)]="visibleSidebar2" position="right" [baseZIndex]="10000">
   <h1 style="font-weight:normal">Right Sidebar</h1>
+
+  <p [ngClass]="selectedClass.name">Teste</p>
+
+  <h5>Seleciona a Class {{ selectedClass.name}}</h5>
+  <p-dropdown [options]="myclass"
+              [(ngModel)]="selectedClass"
+              placeholder="Select a Class"
+              optionLabel="name" [showClear]="true"></p-dropdown>
+  <hr>
+
+
+
   <p-button type="button" (click)="visibleSidebar2 = false" label="Save" styleClass="p-button-success"></p-button>
   <p-button type="button" (click)="visibleSidebar2 = false" label="Cancel" styleClass="p-button-secondary"></p-button>
 </p-sidebar>

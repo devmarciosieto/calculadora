@@ -20,7 +20,8 @@ export class BasicoComponent implements OnInit {
   visibleSidebar5;
 
   selectedCor: Cor;
-
+  selectedClass: any;
+  myclass: any;
   cores: Cor[];
 
   selectedTamanho: any = null;
@@ -40,6 +41,13 @@ export class BasicoComponent implements OnInit {
       {name: 'Vemelho', cor: 'red'}
     ];
 
+    this.myclass = [
+      {name: 'myclass1', cor: 'myclass1'},
+      {name: 'myclass2', cor: 'myclass2'},
+      {name: 'myclass3', cor: 'myclass3'}
+    ];
+
+    this.selectedClass = this.myclass[0];
     this.selectedTamanho = this.tamanhos[1];
     this.selectedCor = this.cores[1];
 
